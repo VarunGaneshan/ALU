@@ -1,0 +1,205 @@
+# //  Questa Sim-64
+# //  Version 10.7c win64 Aug 18 2018
+# //
+# //  Copyright 1991-2018 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+vlog -sv +acc +cover test_bench.v
+# QuestaSim-64 vlog 10.7c Compiler 2018.08 Aug 18 2018
+# Start time: 22:46:27 on May 27,2025
+# vlog -reportprogress 300 -sv "+acc" "+cover" test_bench.v 
+# -- Compiling module alu_opA
+# -- Compiling module alu_opB
+# -- Compiling module alu_two_op
+# -- Compiling module alu_top
+# -- Compiling module alu_top_tb
+# 
+# Top level modules:
+# 	alu_top_tb
+# End time: 22:46:27 on May 27,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+
+vsim -novopt -suppress 12110 -coverage alu_top_tb -c -do "coverage save -onexit -directive -codeAll alu.ucdb; run -all; exit"
+# vsim -novopt -suppress 12110 -coverage alu_top_tb -c -do "coverage save -onexit -directive -codeAll alu.ucdb; run -all; exit" 
+# Start time: 22:46:32 on May 27,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Refreshing C:/Users/Lenovo/Desktop/ALU_TEST/work.alu_top_tb
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.alu_top_tb
+# Refreshing C:/Users/Lenovo/Desktop/ALU_TEST/work.alu_top
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.alu_top
+# Refreshing C:/Users/Lenovo/Desktop/ALU_TEST/work.alu_opA
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.alu_opA
+# Refreshing C:/Users/Lenovo/Desktop/ALU_TEST/work.alu_opB
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.alu_opB
+# Refreshing C:/Users/Lenovo/Desktop/ALU_TEST/work.alu_two_op
+# ** Warning: (vlog-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading work.alu_two_op
+# coverage save -onexit -directive -codeAll alu.ucdb
+#  run -all
+# [PASS]              ADD
+# [PASS]              SUB
+# [PASS]          ADD_CIN
+# [PASS]          SUB_CIN
+# [PASS]           CMP_EQ
+# [PASS]           CMP_GT
+# [PASS]           CMP_LT
+# [PASS]            INC_A
+# [PASS]            DEC_A
+# [PASS]            INC_B
+# [PASS]            DEC_B
+# [PASS]            NOT_A
+# [PASS]           SHL1_A
+# [PASS]           SHR1_A
+# [PASS]              AND
+# [PASS]               OR
+# [PASS]              XOR
+# [PASS]          INC_MUL
+# [PASS]          SHL_MUL
+# [PASS]              ROL
+# [PASS]              ROR
+# [PASS]        ADD_SIGN1
+# [PASS]        SUB_SIGN1
+# [PASS]        SUB_SIGN2
+# [PASS]             NAND
+# [PASS]              NOR
+# [PASS]             XNOR
+# [PASS]            NOT_B
+# [PASS]           SHR1_B
+# [PASS]           SHL1_B
+# [PASS]          ADD_OVF
+# [PASS]        SUB_UFLOW
+# [PASS]    ADD_MAX_INPUT
+# [PASS]       SIGNED_OVF
+# [PASS]     SIGNED_UFLOW
+# [PASS]          ERR_CMD
+# [PASS]    ERR_INP_VALID
+# [PASS]   ERR_INP_VALIDA
+# [PASS]   ERR_INP_VALIDB
+# [PASS]           CE_LOW
+# [PASS]        ERR_MIXED
+# [PASS]     ERR_INP_ZERO
+# [PASS]        DEC_A_OVF
+# [PASS]        DEC_B_OVF
+# [PASS]       INC_A_COUT
+# [PASS]       INC_B_COUT
+# [PASS]          ROL_ERR
+# [PASS]          ROR_ERR
+# [PASS]      SUB_CIN_EQ1
+# [PASS]      SUB_CIN_EQ0
+# [PASS]    SUB_CIN_UNDER
+# [PASS]     ADD_SIGN_NEG
+# [PASS]      ADD_SIGN_EQ
+# [PASS]      SUB_SIGN_EQ
+# [PASS]     INC_MUL_MAXA
+# [PASS]     INC_MUL_MAXB
+# [PASS]      INC_MUL_BIG
+# [PASS]          ERR_RST
+# Total: 58   Passed: 58   Failed: 0
+# ** Note: $finish    : test_bench.v(302)
+#    Time: 1795 ns  Iteration: 1  Instance: /alu_top_tb
+# 1
+# Break in Module alu_top_tb at test_bench.v line 302
+#  exit
+
+vsim -novopt -suppress 12110 -coverage alu_top_tb -c -do "coverage save -onexit -directive -codeAll alu.ucdb; run -all; exit"
+# Saving coverage database on exit...
+# End time: 22:46:48 on May 27,2025, Elapsed time: 0:00:16
+# Errors: 0, Warnings: 1
+# vsim -novopt -suppress 12110 -coverage alu_top_tb -c -do "coverage save -onexit -directive -codeAll alu.ucdb; run -all; exit" 
+# Start time: 22:46:48 on May 27,2025
+# ** Warning: (vsim-8891) All optimizations are disabled because the -novopt option is in effect. This will cause your simulation to run very slowly. If you are using this switch to preserve visibility for Debug or PLI features, please see the User's Manual section on Preserving Object Visibility with vopt. -novopt option is now deprecated and will be removed in future releases.
+# Loading sv_std.std
+# Loading work.alu_top_tb
+# Loading work.alu_top
+# Loading work.alu_opA
+# Loading work.alu_opB
+# Loading work.alu_two_op
+# coverage save -onexit -directive -codeAll alu.ucdb
+#  run -all
+# [PASS]              ADD
+# [PASS]              SUB
+# [PASS]          ADD_CIN
+# [PASS]          SUB_CIN
+# [PASS]           CMP_EQ
+# [PASS]           CMP_GT
+# [PASS]           CMP_LT
+# [PASS]            INC_A
+# [PASS]            DEC_A
+# [PASS]            INC_B
+# [PASS]            DEC_B
+# [PASS]            NOT_A
+# [PASS]           SHL1_A
+# [PASS]           SHR1_A
+# [PASS]              AND
+# [PASS]               OR
+# [PASS]              XOR
+# [PASS]          INC_MUL
+# [PASS]          SHL_MUL
+# [PASS]              ROL
+# [PASS]              ROR
+# [PASS]        ADD_SIGN1
+# [PASS]        SUB_SIGN1
+# [PASS]        SUB_SIGN2
+# [PASS]             NAND
+# [PASS]              NOR
+# [PASS]             XNOR
+# [PASS]            NOT_B
+# [PASS]           SHR1_B
+# [PASS]           SHL1_B
+# [PASS]          ADD_OVF
+# [PASS]        SUB_UFLOW
+# [PASS]    ADD_MAX_INPUT
+# [PASS]       SIGNED_OVF
+# [PASS]     SIGNED_UFLOW
+# [PASS]          ERR_CMD
+# [PASS]    ERR_INP_VALID
+# [PASS]   ERR_INP_VALIDA
+# [PASS]   ERR_INP_VALIDB
+# [PASS]           CE_LOW
+# [PASS]        ERR_MIXED
+# [PASS]     ERR_INP_ZERO
+# [PASS]        DEC_A_OVF
+# [PASS]        DEC_B_OVF
+# [PASS]       INC_A_COUT
+# [PASS]       INC_B_COUT
+# [PASS]          ROL_ERR
+# [PASS]          ROR_ERR
+# [PASS]      SUB_CIN_EQ1
+# [PASS]      SUB_CIN_EQ0
+# [PASS]    SUB_CIN_UNDER
+# [PASS]     ADD_SIGN_NEG
+# [PASS]      ADD_SIGN_EQ
+# [PASS]      SUB_SIGN_EQ
+# [PASS]     INC_MUL_MAXA
+# [PASS]     INC_MUL_MAXB
+# [PASS]      INC_MUL_BIG
+# [PASS]          ERR_RST
+# Total: 58   Passed: 58   Failed: 0
+# ** Note: $finish    : test_bench.v(302)
+#    Time: 1795 ns  Iteration: 1  Instance: /alu_top_tb
+# 1
+# Break in Module alu_top_tb at test_bench.v line 302
+#  exit
+vcover report -html alu.ucdb -htmldir covReport -details
+# QuestaSim-64 vcover 10.7c Coverage Utility 2018.08 Aug 18 2018
+# Start time: 22:46:55 on May 27,2025
+# vcover report -html alu.ucdb -htmldir covReport -details 
+# Report created in covReport/index.html
+# End time: 22:46:56 on May 27,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# Saving coverage database on exit...
+# End time: 22:47:17 on May 27,2025, Elapsed time: 0:00:29
+# Errors: 0, Warnings: 1

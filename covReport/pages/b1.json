@@ -1,0 +1,404 @@
+var g_data = {
+b161:[{dummy:0},
+{anchor:'cvg162',items:[{z:'            		if (m == 1)',f:'test_bench.v',l:'31',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (m == 1)',f:'test_bench.v',l:'31',h:'28',c:'g'}
+,{cr:'c',t:'E',z:'            		else',f:'test_bench.v',l:'33',h:'16',c:'g'}
+]}],
+b169:[{dummy:0},
+{anchor:'cvg170',items:[{z:'        	if (mode && (cmd == `INC_MUL || cmd == `SHL_MUL))',f:'test_bench.v',l:'42',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        	if (mode && (cmd == `INC_MUL || cmd == `SHL_MUL))',f:'test_bench.v',l:'42',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'        	else',f:'test_bench.v',l:'44',h:'53',c:'g'}
+]}],
+b174:[{dummy:0},
+{anchor:'cvg175',items:[{z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',c:'Y',p:'62.50'}
+,{cr:'c',t:'I',z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && ((t_cmd == `INC_A || t_cmd == `DEC_A) &&...',f:'test_bench.v',l:'87',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && ((t_cmd == `INC_B || t_cmd == `DEC_B) &&...',f:'test_bench.v',l:'89',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && (t_cmd &lt;= `SHL_MUL) && is_two_op(t_cmd, ...',f:'test_bench.v',l:'91',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && ((t_cmd == `NOT_A || t_cmd == `SHL1_A |...',f:'test_bench.v',l:'93',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && ((t_cmd == `NOT_B || t_cmd == `SHL1_B |...',f:'test_bench.v',l:'95',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && is_two_op(t_cmd, t_mode) && (t_inp_vali...',f:'test_bench.v',l:'97',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',h:'50',c:'g'}
+]},
+{anchor:'cvg176',items:[{z:'            		if (t_err) begin //{',f:'test_bench.v',l:'100',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (t_err) begin //{',f:'test_bench.v',l:'100',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'			else if (t_mode) begin //{',f:'test_bench.v',l:'103',h:'34',c:'g'}
+,{cr:'c',t:'E',z:'		       	else begin //{',f:'test_bench.v',l:'133',h:'16',c:'g'}
+]},
+{anchor:'cvg177',items:[{z:'  	    			case (t_cmd)',f:'test_bench.v',l:'104',c:'G',p:'92.85'}
+,{cr:'c',t:'T',z:'    					`ADD      : begin t_res[`OP_WIDTH:0] = t_opa + t_opb; t_cout = t...',f:'test_bench.v',l:'105',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'    					`SUB      : begin t_res[`OP_WIDTH:0] = t_opa - t_opb; t_oflow = ...',f:'test_bench.v',l:'106',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`ADD_CIN  : begin t_res[`OP_WIDTH:0] = t_opa + t_opb + t_cin; t_...',f:'test_bench.v',l:'107',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SUB_CIN  : begin t_res[`OP_WIDTH:0] = t_opa - t_opb - t_cin; t_...',f:'test_bench.v',l:'108',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'    					`CMP      : begin t_g = (t_opa &gt; t_opb); t_l = (t_opa &lt; t_opb); ...',f:'test_bench.v',l:'109',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_A    : begin t_res[`OP_WIDTH:0] = t_opa + 1; t_cout = t_res...',f:'test_bench.v',l:'110',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`DEC_A    : begin t_res[`OP_WIDTH:0] = t_opa - 1; t_oflow = (t_o...',f:'test_bench.v',l:'111',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_B    : begin t_res[`OP_WIDTH:0] = t_opb + 1; t_cout = t_res...',f:'test_bench.v',l:'112',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`DEC_B    : begin t_res[`OP_WIDTH:0] = t_opb - 1; t_oflow = (t_o...',f:'test_bench.v',l:'113',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_MUL  : begin t_res = (t_opa + 1) * (t_opb + 1); end',f:'test_bench.v',l:'114',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL_MUL  : begin t_res = (t_opa &lt;&lt; 1) * t_opb; end',f:'test_bench.v',l:'115',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`ADD_SIGN : begin ',f:'test_bench.v',l:'116',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'				       	`SUB_SIGN : begin',f:'test_bench.v',l:'124',h:'4',c:'g'}
+,{cr:'m',t:'A',z:'  	    			case (t_cmd)',f:'test_bench.v',l:'104',h:'0',c:'r'}
+]},
+{anchor:'cvg178',items:[{z:'    				case (t_cmd)',f:'test_bench.v',l:'136',c:'G',p:'93.33'}
+,{cr:'c',t:'T',z:'    					`AND   : t_res[`OP_WIDTH-1:0] = t_opa & t_opb;',f:'test_bench.v',l:'137',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`NAND  : t_res[`OP_WIDTH-1:0] = ~(t_opa & t_opb);',f:'test_bench.v',l:'138',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`OR    : t_res[`OP_WIDTH-1:0] = t_opa | t_opb;',f:'test_bench.v',l:'139',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'   					`NOR   : t_res[`OP_WIDTH-1:0] = ~(t_opa | t_opb);',f:'test_bench.v',l:'140',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`XOR   : t_res[`OP_WIDTH-1:0] = t_opa ^ t_opb;',f:'test_bench.v',l:'141',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`XNOR  : t_res[`OP_WIDTH-1:0] = ~(t_opa ^ t_opb);',f:'test_bench.v',l:'142',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`ROL: begin',f:'test_bench.v',l:'143',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'					`ROR: begin',f:'test_bench.v',l:'149',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`NOT_A : t_res[`OP_WIDTH-1:0] = ~t_opa;',f:'test_bench.v',l:'154',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`NOT_B : t_res[`OP_WIDTH-1:0] = ~t_opb;',f:'test_bench.v',l:'155',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHR1_A: t_res[`OP_WIDTH-1:0] = t_opa &gt;&gt; 1;',f:'test_bench.v',l:'156',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL1_A: t_res[`OP_WIDTH-1:0] = t_opa &lt;&lt; 1;',f:'test_bench.v',l:'157',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHR1_B: t_res[`OP_WIDTH-1:0] = t_opb &gt;&gt; 1;',f:'test_bench.v',l:'158',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL1_B: t_res[`OP_WIDTH-1:0] = t_opb &lt;&lt; 1;',f:'test_bench.v',l:'159',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    				case (t_cmd)',f:'test_bench.v',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg179',items:[{z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',h:'1',c:'g'}
+]},
+{anchor:'cvg180',items:[{z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',h:'1',c:'g'}
+]}],
+b225:[{dummy:0},
+{anchor:'cvg226',items:[{z:'    			if (rst_v) begin //{',f:'test_bench.v',l:'190',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    			if (rst_v) begin //{',f:'test_bench.v',l:'190',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       	else if (!ce_v) begin //{',f:'test_bench.v',l:'199',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'		       	else begin //{',f:'test_bench.v',l:'209',h:'56',c:'g'}
+]},
+{anchor:'cvg227',items:[{z:'    			if ((res === exp_res) && (cout === exp_cout) && (oflow === exp_ofl...',f:'test_bench.v',l:'214',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    			if ((res === exp_res) && (cout === exp_cout) && (oflow === exp_ofl...',f:'test_bench.v',l:'214',h:'58',c:'g'}
+,{cr:'m',t:'E',z:'    			end else begin',f:'test_bench.v',l:'217',h:'0',c:'r'}
+]}],
+b405:[{dummy:0},
+{anchor:'cvg406',items:[{z:'            	if (m == 1) is_opA_only = (c == `INC_A || c == `DEC_A);',f:'alu_top.v',l:'37',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1) is_opA_only = (c == `INC_A || c == `DEC_A);',f:'alu_top.v',l:'37',h:'97',c:'g'}
+,{cr:'c',t:'E',z:'            	else        is_opA_only = (c == `NOT_A || c == `SHL1_A || c ...',f:'alu_top.v',l:'38',h:'57',c:'g'}
+]}],
+b413:[{dummy:0},
+{anchor:'cvg414',items:[{z:'            	if (m == 1) is_opB_only = (c == `INC_B || c == `DEC_B);',f:'alu_top.v',l:'45',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1) is_opB_only = (c == `INC_B || c == `DEC_B);',f:'alu_top.v',l:'45',h:'87',c:'g'}
+,{cr:'c',t:'E',z:'            	else        is_opB_only = (c == `NOT_B || c == `SHL1_B || c ...',f:'alu_top.v',l:'46',h:'51',c:'g'}
+]}],
+b421:[{dummy:0},
+{anchor:'cvg422',items:[{z:'            	if (m == 1)',f:'alu_top.v',l:'53',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1)',f:'alu_top.v',l:'53',h:'78',c:'g'}
+,{cr:'c',t:'E',z:'            	else',f:'alu_top.v',l:'55',h:'45',c:'g'}
+]}],
+b4:[{dummy:0},
+{anchor:'cvg430',items:[{z:'	if (enable) begin //{	',f:'alu_opA.v',l:'18',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_opA.v',l:'18',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_opA.v',l:'40',h:'50',c:'g'}
+]},
+{anchor:'cvg431',items:[{z:'		if (mode) begin //{',f:'alu_opA.v',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_opA.v',l:'19',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_opA.v',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg432',items:[{z:'			case (cmd)',f:'alu_opA.v',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`INC_A : begin //{',f:'alu_opA.v',l:'21',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'				default : begin //{',f:'alu_opA.v',l:'26',h:'2',c:'g'}
+]},
+{anchor:'cvg433',items:[{z:'			case (cmd) ',f:'alu_opA.v',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`NOT_A  : res[`OP_WIDTH-1:0] = ~opa; //-1 in range',f:'alu_opA.v',l:'34',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`SHR1_A : res[`OP_WIDTH-1:0] = opa &gt;&gt; 1;',f:'alu_opA.v',l:'35',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       		default : res[`OP_WIDTH-1:0] = opa &lt;&lt;1;	',f:'alu_opA.v',l:'36',h:'1',c:'g'}
+]}],
+b429:[{dummy:0},
+{anchor:'cvg430',items:[{z:'	if (enable) begin //{	',f:'alu_opA.v',l:'18',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_opA.v',l:'18',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_opA.v',l:'40',h:'50',c:'g'}
+]},
+{anchor:'cvg431',items:[{z:'		if (mode) begin //{',f:'alu_opA.v',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_opA.v',l:'19',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_opA.v',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg432',items:[{z:'			case (cmd)',f:'alu_opA.v',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`INC_A : begin //{',f:'alu_opA.v',l:'21',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'				default : begin //{',f:'alu_opA.v',l:'26',h:'2',c:'g'}
+]},
+{anchor:'cvg433',items:[{z:'			case (cmd) ',f:'alu_opA.v',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`NOT_A  : res[`OP_WIDTH-1:0] = ~opa; //-1 in range',f:'alu_opA.v',l:'34',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`SHR1_A : res[`OP_WIDTH-1:0] = opa &gt;&gt; 1;',f:'alu_opA.v',l:'35',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       		default : res[`OP_WIDTH-1:0] = opa &lt;&lt;1;	',f:'alu_opA.v',l:'36',h:'1',c:'g'}
+]}],
+b3:[{dummy:0},
+{anchor:'cvg465',items:[{z:'	if (enable) begin //{	',f:'alu_opB.v',l:'18',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_opB.v',l:'18',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_opB.v',l:'40',h:'46',c:'g'}
+]},
+{anchor:'cvg466',items:[{z:'		if (mode) begin //{',f:'alu_opB.v',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_opB.v',l:'19',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_opB.v',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg467',items:[{z:'			case (cmd)',f:'alu_opB.v',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`INC_B : begin //{',f:'alu_opB.v',l:'21',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'				default : begin //{',f:'alu_opB.v',l:'26',h:'2',c:'g'}
+]},
+{anchor:'cvg468',items:[{z:'			case (cmd) ',f:'alu_opB.v',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`NOT_B  : res[`OP_WIDTH-1:0] = ~opb;',f:'alu_opB.v',l:'34',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`SHR1_B : res[`OP_WIDTH-1:0] = opb &gt;&gt; 1;',f:'alu_opB.v',l:'35',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       		default : res[`OP_WIDTH-1:0] = opb &lt;&lt;1;	',f:'alu_opB.v',l:'36',h:'1',c:'g'}
+]}],
+b464:[{dummy:0},
+{anchor:'cvg465',items:[{z:'	if (enable) begin //{	',f:'alu_opB.v',l:'18',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_opB.v',l:'18',h:'7',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_opB.v',l:'40',h:'46',c:'g'}
+]},
+{anchor:'cvg466',items:[{z:'		if (mode) begin //{',f:'alu_opB.v',l:'19',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_opB.v',l:'19',h:'4',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_opB.v',l:'32',h:'3',c:'g'}
+]},
+{anchor:'cvg467',items:[{z:'			case (cmd)',f:'alu_opB.v',l:'20',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`INC_B : begin //{',f:'alu_opB.v',l:'21',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'				default : begin //{',f:'alu_opB.v',l:'26',h:'2',c:'g'}
+]},
+{anchor:'cvg468',items:[{z:'			case (cmd) ',f:'alu_opB.v',l:'33',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`NOT_B  : res[`OP_WIDTH-1:0] = ~opb;',f:'alu_opB.v',l:'34',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`SHR1_B : res[`OP_WIDTH-1:0] = opb &gt;&gt; 1;',f:'alu_opB.v',l:'35',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       		default : res[`OP_WIDTH-1:0] = opb &lt;&lt;1;	',f:'alu_opB.v',l:'36',h:'1',c:'g'}
+]}],
+b2:[{dummy:0},
+{anchor:'cvg500',items:[{z:'	if (enable) begin //{	',f:'alu_two_op.v',l:'36',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_two_op.v',l:'36',h:'36',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_two_op.v',l:'115',h:'22',c:'g'}
+]},
+{anchor:'cvg501',items:[{z:'		if (mode) begin //{',f:'alu_two_op.v',l:'37',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_two_op.v',l:'37',h:'26',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_two_op.v',l:'91',h:'10',c:'g'}
+]},
+{anchor:'cvg502',items:[{z:'			case (cmd)',f:'alu_two_op.v',l:'38',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`ADD : begin //{',f:'alu_two_op.v',l:'39',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'				`SUB : begin //{',f:'alu_two_op.v',l:'44',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                `ADD_CIN : begin //{',f:'alu_two_op.v',l:'49',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                                `SUB_CIN : begin //{',f:'alu_two_op.v',l:'54',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'				`CMP : begin //{',f:'alu_two_op.v',l:'59',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'			 	`INC_MUL : begin //{',f:'alu_two_op.v',l:'65',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                `SHL_MUL : begin //{',f:'alu_two_op.v',l:'69',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                                `ADD_SIGN : begin //{',f:'alu_two_op.v',l:'73',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default : begin //{',f:'alu_two_op.v',l:'82',h:'4',c:'g'}
+]},
+{anchor:'cvg503',items:[{z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',h:'1',c:'g'}
+]},
+{anchor:'cvg504',items:[{z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',h:'2',c:'g'}
+]},
+{anchor:'cvg505',items:[{z:'			case (cmd) ',f:'alu_two_op.v',l:'92',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                		`AND    : res[`OP_WIDTH-1:0] = opa & opb;',f:'alu_two_op.v',l:'93',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`NAND   : res[`OP_WIDTH-1:0] = ~(opa & opb);',f:'alu_two_op.v',l:'94',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`OR     : res[`OP_WIDTH-1:0] = opa | opb;',f:'alu_two_op.v',l:'95',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`NOR    : res[`OP_WIDTH-1:0] = ~(opa | opb);',f:'alu_two_op.v',l:'96',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`XOR    : res[`OP_WIDTH-1:0] = opa ^ opb;',f:'alu_two_op.v',l:'97',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`XNOR   : res[`OP_WIDTH-1:0] = ~(opa ^ opb);',f:'alu_two_op.v',l:'98',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`ROL    : begin //{',f:'alu_two_op.v',l:'99',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                default    : begin //{',f:'alu_two_op.v',l:'106',h:'2',c:'g'}
+]},
+{anchor:'cvg506',items:[{z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',h:'1',c:'g'}
+]},
+{anchor:'cvg507',items:[{z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',h:'1',c:'g'}
+]}],
+b499:[{dummy:0},
+{anchor:'cvg500',items:[{z:'	if (enable) begin //{	',f:'alu_two_op.v',l:'36',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'	if (enable) begin //{	',f:'alu_two_op.v',l:'36',h:'36',c:'g'}
+,{cr:'c',t:'E',z:'	else begin //{',f:'alu_two_op.v',l:'115',h:'22',c:'g'}
+]},
+{anchor:'cvg501',items:[{z:'		if (mode) begin //{',f:'alu_two_op.v',l:'37',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'		if (mode) begin //{',f:'alu_two_op.v',l:'37',h:'26',c:'g'}
+,{cr:'c',t:'E',z:'		else begin //{',f:'alu_two_op.v',l:'91',h:'10',c:'g'}
+]},
+{anchor:'cvg502',items:[{z:'			case (cmd)',f:'alu_two_op.v',l:'38',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'				`ADD : begin //{',f:'alu_two_op.v',l:'39',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'				`SUB : begin //{',f:'alu_two_op.v',l:'44',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                `ADD_CIN : begin //{',f:'alu_two_op.v',l:'49',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                                `SUB_CIN : begin //{',f:'alu_two_op.v',l:'54',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'				`CMP : begin //{',f:'alu_two_op.v',l:'59',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'			 	`INC_MUL : begin //{',f:'alu_two_op.v',l:'65',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                `SHL_MUL : begin //{',f:'alu_two_op.v',l:'69',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                                `ADD_SIGN : begin //{',f:'alu_two_op.v',l:'73',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'                                default : begin //{',f:'alu_two_op.v',l:'82',h:'4',c:'g'}
+]},
+{anchor:'cvg503',items:[{z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'						oflow = (opa &lt; opb) ? 1 : 0;',f:'alu_two_op.v',l:'46',h:'1',c:'g'}
+]},
+{anchor:'cvg504',items:[{z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',h:'2',c:'g'}
+,{cr:'c',t:'E',z:'                                                oflow = (opa &lt; opb || (op...',f:'alu_two_op.v',l:'56',h:'2',c:'g'}
+]},
+{anchor:'cvg505',items:[{z:'			case (cmd) ',f:'alu_two_op.v',l:'92',c:'G',p:'100.00'}
+,{cr:'c',t:'T',z:'                		`AND    : res[`OP_WIDTH-1:0] = opa & opb;',f:'alu_two_op.v',l:'93',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`NAND   : res[`OP_WIDTH-1:0] = ~(opa & opb);',f:'alu_two_op.v',l:'94',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`OR     : res[`OP_WIDTH-1:0] = opa | opb;',f:'alu_two_op.v',l:'95',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`NOR    : res[`OP_WIDTH-1:0] = ~(opa | opb);',f:'alu_two_op.v',l:'96',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`XOR    : res[`OP_WIDTH-1:0] = opa ^ opb;',f:'alu_two_op.v',l:'97',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'                		`XNOR   : res[`OP_WIDTH-1:0] = ~(opa ^ opb);',f:'alu_two_op.v',l:'98',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'				`ROL    : begin //{',f:'alu_two_op.v',l:'99',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'                                default    : begin //{',f:'alu_two_op.v',l:'106',h:'2',c:'g'}
+]},
+{anchor:'cvg506',items:[{z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'					  	if(opb_err_bits) begin //{',f:'alu_two_op.v',l:'100',h:'1',c:'g'}
+]},
+{anchor:'cvg507',items:[{z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'                                                if(opb_err_bits) begin //...',f:'alu_two_op.v',l:'107',h:'1',c:'g'}
+]}],
+b230:[{dummy:0},
+{anchor:'cvg231',items:[{z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        	else if (ce) begin //{',f:'alu_top.v',l:'106',h:'173',c:'g'}
+,{cr:'c',t:'A',z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',h:'3',c:'g'}
+]},
+{anchor:'cvg232',items:[{z:'            		if (valid_cmd && valid_inp) begin //{',f:'alu_top.v',l:'108',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (valid_cmd && valid_inp) begin //{',f:'alu_top.v',l:'108',h:'155',c:'g'}
+,{cr:'c',t:'E',z:'            		else begin //{ ',f:'alu_top.v',l:'119',h:'18',c:'g'}
+]},
+{anchor:'cvg233',items:[{z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',h:'19',c:'g'}
+,{cr:'c',t:'A',z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',h:'154',c:'g'}
+]},
+{anchor:'cvg234',items:[{z:'          	 	if (!is_mul_r) begin //{',f:'alu_top.v',l:'135',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'          	 	if (!is_mul_r) begin //{',f:'alu_top.v',l:'135',h:'154',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (is_mul_mul) begin //{',f:'alu_top.v',l:'161',h:'17',c:'g'}
+,{cr:'c',t:'E',z:'			else begin //{',f:'alu_top.v',l:'170',h:'2',c:'g'}
+]},
+{anchor:'cvg235',items:[{z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_two_op_r) begin //{',f:'alu_top.v',l:'139',h:'93',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_opa_r) begin //{',f:'alu_top.v',l:'148',h:'21',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_opb_r) begin //{',f:'alu_top.v',l:'154',h:'21',c:'g'}
+,{cr:'c',t:'A',z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',h:'1',c:'g'}
+]}],
+b763:[{dummy:0},
+{anchor:'cvg764',items:[{z:'            	if (m == 1) is_opA_only = (c == `INC_A || c == `DEC_A);',f:'alu_top.v',l:'37',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1) is_opA_only = (c == `INC_A || c == `DEC_A);',f:'alu_top.v',l:'37',h:'97',c:'g'}
+,{cr:'c',t:'E',z:'            	else        is_opA_only = (c == `NOT_A || c == `SHL1_A || c ...',f:'alu_top.v',l:'38',h:'57',c:'g'}
+]}],
+b771:[{dummy:0},
+{anchor:'cvg772',items:[{z:'            	if (m == 1) is_opB_only = (c == `INC_B || c == `DEC_B);',f:'alu_top.v',l:'45',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1) is_opB_only = (c == `INC_B || c == `DEC_B);',f:'alu_top.v',l:'45',h:'87',c:'g'}
+,{cr:'c',t:'E',z:'            	else        is_opB_only = (c == `NOT_B || c == `SHL1_B || c ...',f:'alu_top.v',l:'46',h:'51',c:'g'}
+]}],
+b779:[{dummy:0},
+{anchor:'cvg780',items:[{z:'            	if (m == 1)',f:'alu_top.v',l:'53',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            	if (m == 1)',f:'alu_top.v',l:'53',h:'78',c:'g'}
+,{cr:'c',t:'E',z:'            	else',f:'alu_top.v',l:'55',h:'45',c:'g'}
+]}],
+b5:[{dummy:0},
+{anchor:'cvg589',items:[{z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'        	else if (ce) begin //{',f:'alu_top.v',l:'106',h:'173',c:'g'}
+,{cr:'c',t:'A',z:'        	if (rst) begin //{',f:'alu_top.v',l:'99',h:'3',c:'g'}
+]},
+{anchor:'cvg590',items:[{z:'            		if (valid_cmd && valid_inp) begin //{',f:'alu_top.v',l:'108',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (valid_cmd && valid_inp) begin //{',f:'alu_top.v',l:'108',h:'155',c:'g'}
+,{cr:'c',t:'E',z:'            		else begin //{ ',f:'alu_top.v',l:'119',h:'18',c:'g'}
+]},
+{anchor:'cvg591',items:[{z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',h:'19',c:'g'}
+,{cr:'c',t:'A',z:'            		if (is_mul_r) begin //{',f:'alu_top.v',l:'130',h:'154',c:'g'}
+]},
+{anchor:'cvg592',items:[{z:'          	 	if (!is_mul_r) begin //{',f:'alu_top.v',l:'135',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'          	 	if (!is_mul_r) begin //{',f:'alu_top.v',l:'135',h:'154',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (is_mul_mul) begin //{',f:'alu_top.v',l:'161',h:'17',c:'g'}
+,{cr:'c',t:'E',z:'			else begin //{',f:'alu_top.v',l:'170',h:'2',c:'g'}
+]},
+{anchor:'cvg593',items:[{z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',h:'18',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_two_op_r) begin //{',f:'alu_top.v',l:'139',h:'93',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_opa_r) begin //{',f:'alu_top.v',l:'148',h:'21',c:'g'}
+,{cr:'c',t:'T',z:'                		else if (en_opb_r) begin //{',f:'alu_top.v',l:'154',h:'21',c:'g'}
+,{cr:'c',t:'A',z:'                		if (err_r) begin //{',f:'alu_top.v',l:'136',h:'1',c:'g'}
+]}],
+b941:[{dummy:0},
+{anchor:'cvg942',items:[{z:'            		if (m == 1)',f:'test_bench.v',l:'31',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (m == 1)',f:'test_bench.v',l:'31',h:'28',c:'g'}
+,{cr:'c',t:'E',z:'            		else',f:'test_bench.v',l:'33',h:'16',c:'g'}
+]}],
+b949:[{dummy:0},
+{anchor:'cvg950',items:[{z:'        	if (mode && (cmd == `INC_MUL || cmd == `SHL_MUL))',f:'test_bench.v',l:'42',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        	if (mode && (cmd == `INC_MUL || cmd == `SHL_MUL))',f:'test_bench.v',l:'42',h:'5',c:'g'}
+,{cr:'c',t:'E',z:'        	else',f:'test_bench.v',l:'44',h:'53',c:'g'}
+]}],
+b954:[{dummy:0},
+{anchor:'cvg955',items:[{z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',c:'Y',p:'62.50'}
+,{cr:'c',t:'I',z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && ((t_cmd == `INC_A || t_cmd == `DEC_A) &&...',f:'test_bench.v',l:'87',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && ((t_cmd == `INC_B || t_cmd == `DEC_B) &&...',f:'test_bench.v',l:'89',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'            		else if (t_mode && (t_cmd &lt;= `SHL_MUL) && is_two_op(t_cmd, ...',f:'test_bench.v',l:'91',h:'2',c:'g'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && ((t_cmd == `NOT_A || t_cmd == `SHL1_A |...',f:'test_bench.v',l:'93',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && ((t_cmd == `NOT_B || t_cmd == `SHL1_B |...',f:'test_bench.v',l:'95',h:'0',c:'r'}
+,{cr:'m',t:'T',z:'            		else if (!t_mode && is_two_op(t_cmd, t_mode) && (t_inp_vali...',f:'test_bench.v',l:'97',h:'0',c:'r'}
+,{cr:'c',t:'A',z:'            		if      ((t_mode && (t_cmd &gt; `SUB_SIGN)) || (!t_mode && (t_...',f:'test_bench.v',l:'85',h:'50',c:'g'}
+]},
+{anchor:'cvg956',items:[{z:'            		if (t_err) begin //{',f:'test_bench.v',l:'100',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'            		if (t_err) begin //{',f:'test_bench.v',l:'100',h:'6',c:'g'}
+,{cr:'c',t:'T',z:'			else if (t_mode) begin //{',f:'test_bench.v',l:'103',h:'34',c:'g'}
+,{cr:'c',t:'E',z:'		       	else begin //{',f:'test_bench.v',l:'133',h:'16',c:'g'}
+]},
+{anchor:'cvg957',items:[{z:'  	    			case (t_cmd)',f:'test_bench.v',l:'104',c:'G',p:'92.85'}
+,{cr:'c',t:'T',z:'    					`ADD      : begin t_res[`OP_WIDTH:0] = t_opa + t_opb; t_cout = t...',f:'test_bench.v',l:'105',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'    					`SUB      : begin t_res[`OP_WIDTH:0] = t_opa - t_opb; t_oflow = ...',f:'test_bench.v',l:'106',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`ADD_CIN  : begin t_res[`OP_WIDTH:0] = t_opa + t_opb + t_cin; t_...',f:'test_bench.v',l:'107',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SUB_CIN  : begin t_res[`OP_WIDTH:0] = t_opa - t_opb - t_cin; t_...',f:'test_bench.v',l:'108',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'    					`CMP      : begin t_g = (t_opa &gt; t_opb); t_l = (t_opa &lt; t_opb); ...',f:'test_bench.v',l:'109',h:'3',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_A    : begin t_res[`OP_WIDTH:0] = t_opa + 1; t_cout = t_res...',f:'test_bench.v',l:'110',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`DEC_A    : begin t_res[`OP_WIDTH:0] = t_opa - 1; t_oflow = (t_o...',f:'test_bench.v',l:'111',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_B    : begin t_res[`OP_WIDTH:0] = t_opb + 1; t_cout = t_res...',f:'test_bench.v',l:'112',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`DEC_B    : begin t_res[`OP_WIDTH:0] = t_opb - 1; t_oflow = (t_o...',f:'test_bench.v',l:'113',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`INC_MUL  : begin t_res = (t_opa + 1) * (t_opb + 1); end',f:'test_bench.v',l:'114',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL_MUL  : begin t_res = (t_opa &lt;&lt; 1) * t_opb; end',f:'test_bench.v',l:'115',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`ADD_SIGN : begin ',f:'test_bench.v',l:'116',h:'4',c:'g'}
+,{cr:'c',t:'T',z:'				       	`SUB_SIGN : begin',f:'test_bench.v',l:'124',h:'4',c:'g'}
+,{cr:'m',t:'A',z:'  	    			case (t_cmd)',f:'test_bench.v',l:'104',h:'0',c:'r'}
+]},
+{anchor:'cvg958',items:[{z:'    				case (t_cmd)',f:'test_bench.v',l:'136',c:'G',p:'93.33'}
+,{cr:'c',t:'T',z:'    					`AND   : t_res[`OP_WIDTH-1:0] = t_opa & t_opb;',f:'test_bench.v',l:'137',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`NAND  : t_res[`OP_WIDTH-1:0] = ~(t_opa & t_opb);',f:'test_bench.v',l:'138',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`OR    : t_res[`OP_WIDTH-1:0] = t_opa | t_opb;',f:'test_bench.v',l:'139',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'   					`NOR   : t_res[`OP_WIDTH-1:0] = ~(t_opa | t_opb);',f:'test_bench.v',l:'140',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`XOR   : t_res[`OP_WIDTH-1:0] = t_opa ^ t_opb;',f:'test_bench.v',l:'141',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`XNOR  : t_res[`OP_WIDTH-1:0] = ~(t_opa ^ t_opb);',f:'test_bench.v',l:'142',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`ROL: begin',f:'test_bench.v',l:'143',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'					`ROR: begin',f:'test_bench.v',l:'149',h:'2',c:'g'}
+,{cr:'c',t:'T',z:'    					`NOT_A : t_res[`OP_WIDTH-1:0] = ~t_opa;',f:'test_bench.v',l:'154',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`NOT_B : t_res[`OP_WIDTH-1:0] = ~t_opb;',f:'test_bench.v',l:'155',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHR1_A: t_res[`OP_WIDTH-1:0] = t_opa &gt;&gt; 1;',f:'test_bench.v',l:'156',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL1_A: t_res[`OP_WIDTH-1:0] = t_opa &lt;&lt; 1;',f:'test_bench.v',l:'157',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHR1_B: t_res[`OP_WIDTH-1:0] = t_opb &gt;&gt; 1;',f:'test_bench.v',l:'158',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'    					`SHL1_B: t_res[`OP_WIDTH-1:0] = t_opb &lt;&lt; 1;',f:'test_bench.v',l:'159',h:'1',c:'g'}
+,{cr:'m',t:'A',z:'    				case (t_cmd)',f:'test_bench.v',l:'136',h:'0',c:'r'}
+]},
+{anchor:'cvg959',items:[{z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'144',h:'1',c:'g'}
+]},
+{anchor:'cvg960',items:[{z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',h:'1',c:'g'}
+,{cr:'c',t:'A',z:'        					if (opb_err_bits)',f:'test_bench.v',l:'150',h:'1',c:'g'}
+]}],
+b1005:[{dummy:0},
+{anchor:'cvg1006',items:[{z:'    			if (rst_v) begin //{',f:'test_bench.v',l:'190',c:'G',p:'100.00'}
+,{cr:'c',t:'I',z:'    			if (rst_v) begin //{',f:'test_bench.v',l:'190',h:'1',c:'g'}
+,{cr:'c',t:'T',z:'		       	else if (!ce_v) begin //{',f:'test_bench.v',l:'199',h:'1',c:'g'}
+,{cr:'c',t:'E',z:'		       	else begin //{',f:'test_bench.v',l:'209',h:'56',c:'g'}
+]},
+{anchor:'cvg1007',items:[{z:'    			if ((res === exp_res) && (cout === exp_cout) && (oflow === exp_ofl...',f:'test_bench.v',l:'214',c:'Y',p:'50.00'}
+,{cr:'c',t:'I',z:'    			if ((res === exp_res) && (cout === exp_cout) && (oflow === exp_ofl...',f:'test_bench.v',l:'214',h:'58',c:'g'}
+,{cr:'m',t:'E',z:'    			end else begin',f:'test_bench.v',l:'217',h:'0',c:'r'}
+]}],
+dummyEnd:0
+};
+processBranchesData(g_data);

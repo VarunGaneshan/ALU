@@ -1,0 +1,5 @@
+alu_opA.v
+alu_opB.v
+alu_top.v
+alu_two_op.v
+test_bench.v
