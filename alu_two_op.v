@@ -21,6 +21,7 @@ module alu_two_op (
     	output reg                    l;
     	output reg                    e;
 
+reg [`OP_WIDTH-1:0] temp_sh;
 localparam ROT_WIDTH = $clog2(`OP_WIDTH); //8 - 3
 wire [ROT_WIDTH-1:0] rot_amt = opb[ROT_WIDTH-1:0]; //[2:0]
 wire opb_err_bits = |opb[`OP_WIDTH-1:ROT_WIDTH+1]; //[7:4]
@@ -66,9 +67,10 @@ always @ (*) begin //{
 						res = (opa + 1) * (opb +1);
 					   end //}
 
-                                `SHL_MUL : begin //{
-                                                res = (opa << 1) * opb;
-                                           end //}
+                		`SHL_MUL : begin //{
+                        			temp_sh = opa << 1; //255 << 1 - 510 
+                        			res = temp_sh * opb;
+                        		   end //}
 
                                 `ADD_SIGN : begin //{
                                                 res[`OP_WIDTH:0] = $signed(opa) + $signed(opb);
