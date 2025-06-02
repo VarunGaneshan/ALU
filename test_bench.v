@@ -76,6 +76,7 @@ module alu_top_tb;
         		reg [`OP_WIDTH:0] t_res;
     		`endif
         	output reg    t_cout, t_oflow, t_g, t_l, t_e, t_err;
+		reg [`OP_WIDTH-1:0] shl_t;
 		integer rot_amt;
 		reg opb_err_bits;
         	begin //{
@@ -112,9 +113,10 @@ module alu_top_tb;
     					`INC_B    : begin t_res[`OP_WIDTH:0] = t_opb + 1; t_cout = t_res[`OP_WIDTH]; end
     					`DEC_B    : begin t_res[`OP_WIDTH:0] = t_opb - 1; t_oflow = (t_opb == 0); end
     					`INC_MUL  : begin t_res = (t_opa + 1) * (t_opb + 1); end
-    					`SHL_MUL  : begin t_res = (t_opa << 1) * t_opb; end
+    					`SHL_MUL  : begin shl_t = t_opa << 1; t_res = shl_t * t_opb; end
     					`ADD_SIGN : begin 
         					t_res[`OP_WIDTH:0] = $signed(t_opa) + $signed(t_opb);
+						t_cout = t_res[`OP_WIDTH];
         					t_oflow = (($signed(t_opa)>0 && $signed(t_opb)>0 && $signed(t_res[`OP_WIDTH-1:0])<0) || ($signed(t_opa)<0 && $signed(t_opb)<0 && $signed(t_res[`OP_WIDTH-1:0])>=0));
         					t_g = ($signed(t_opa) > $signed(t_opb));
         					t_l = ($signed(t_opa) < $signed(t_opb));
@@ -295,6 +297,9 @@ module alu_top_tb;
     		auto_test_vec("INC_MUL_MAXB",   0, 1, 2'b11, 1, `INC_MUL,  8'd1,  8'd127,0);
     		auto_test_vec("INC_MUL_BIG",    0, 1, 2'b11, 1, `INC_MUL,  8'd254,8'd254,0);
 		auto_test_vec("ERR_RST",   	1, 0, 2'b00, 0,	4'b0000,   0,     0,     0);
+		auto_test_vec("ADD_SIGN_TEST",  0, 1 ,2'b11 ,1, `ADD_SIGN, -8'd128,-8'd2,0);
+    		auto_test_vec("SUB_SIGN_TEST",  0, 1 ,2'b11 ,1, `SUB_SIGN, -8'd128,-8'd2,0);
+    		auto_test_vec("SHL_MUL_TEST",    0, 1, 2'b11, 1, `SHL_MUL,  8'hFF,8'hFE,0);
     		//auto_test_vec("RANDOM",  0, 1, 2'b11,1,`ADD,        $random, $random, 0);
 
     		$display("Total: %0d   Passed: %0d   Failed: %0d", testnum-1, pass, fail);
