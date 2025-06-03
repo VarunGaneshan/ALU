@@ -1,7 +1,6 @@
 `timescale 1ns/1ps
 `include "defines.v"
 `include "alu_top.v"
-
 module alu_top_tb;
 
     	reg                     clk, rst, ce, mode, cin;
@@ -76,9 +75,9 @@ module alu_top_tb;
         		reg [`OP_WIDTH:0] t_res;
     		`endif
         	output reg    t_cout, t_oflow, t_g, t_l, t_e, t_err;
-		reg [`OP_WIDTH-1:0] shl_t;
-		integer rot_amt;
-		reg opb_err_bits;
+		    integer rot_amt;
+		    reg opb_err_bits;
+		    reg [`OP_WIDTH-1:0] shl_t;
         	begin //{
             		t_res = 0; t_cout = 0; t_oflow = 0; t_g = 0; t_l = 0; t_e = 0; t_err = 0;
 
@@ -116,7 +115,7 @@ module alu_top_tb;
     					`SHL_MUL  : begin shl_t = t_opa << 1; t_res = shl_t * t_opb; end
     					`ADD_SIGN : begin 
         					t_res[`OP_WIDTH:0] = $signed(t_opa) + $signed(t_opb);
-						t_cout = t_res[`OP_WIDTH];
+        					t_cout = t_res[`OP_WIDTH];
         					t_oflow = (($signed(t_opa)>0 && $signed(t_opb)>0 && $signed(t_res[`OP_WIDTH-1:0])<0) || ($signed(t_opa)<0 && $signed(t_opb)<0 && $signed(t_res[`OP_WIDTH-1:0])>=0));
         					t_g = ($signed(t_opa) > $signed(t_opb));
         					t_l = ($signed(t_opa) < $signed(t_opb));
@@ -139,7 +138,7 @@ module alu_top_tb;
     					`AND   : t_res[`OP_WIDTH-1:0] = t_opa & t_opb;
     					`NAND  : t_res[`OP_WIDTH-1:0] = ~(t_opa & t_opb);
     					`OR    : t_res[`OP_WIDTH-1:0] = t_opa | t_opb;
-   					`NOR   : t_res[`OP_WIDTH-1:0] = ~(t_opa | t_opb);
+   					    `NOR   : t_res[`OP_WIDTH-1:0] = ~(t_opa | t_opb);
     					`XOR   : t_res[`OP_WIDTH-1:0] = t_opa ^ t_opb;
     					`XNOR  : t_res[`OP_WIDTH-1:0] = ~(t_opa ^ t_opb);
     					`ROL: begin
@@ -171,7 +170,7 @@ module alu_top_tb;
     		input reg rst_v, ce_v;
     		input [1:0] inp_valid_v;
     		input mode_v;
-   	 	input [`CMD_WIDTH-1:0] cmd_v;
+   	 	    input [`CMD_WIDTH-1:0] cmd_v;
     		input [`OP_WIDTH-1:0] opa_v, opb_v;
     		input cin_v;
     		input [2:0] delay_cycles;
@@ -186,7 +185,7 @@ module alu_top_tb;
 		begin //{
     			// Driver
     			rst = rst_v; ce = ce_v; inp_valid = inp_valid_v; mode = mode_v; cmd = cmd_v; opa = opa_v; opb = opb_v; cin = cin_v;
-    			for (k = 0; k < delay_cycles; k = k + 1) @(posedge clk); //Wait for DUT op-Monitor
+    			for (k = 0; k < delay_cycles; k = k + 1) @(posedge clk); //Wait for DUT op for delay_cycles-Monitor
 
     			if (rst_v) begin //{
         			exp_res    = 0;
@@ -223,7 +222,7 @@ module alu_top_tb;
 
     			// Save last outputs for !CE check
     			exp_res_last   = exp_res;
-   	 		exp_cout_last  = exp_cout;
+   	 		    exp_cout_last  = exp_cout;
     			exp_oflow_last = exp_oflow;
     			exp_g_last     = exp_g;
     			exp_l_last     = exp_l;
@@ -238,7 +237,7 @@ module alu_top_tb;
     		pass = 0; fail = 0; testnum = 1;
     		#10; rst = 0;
     		//testname,rst_v, ce_v,inp_valid_v,mode_v,cmd_v,opa_v, opb_v, cin_v;
-   	 	auto_test_vec("ADD",       	0, 1, 2'b11, 1, `ADD,      8'd10, 8'd20, 0);
+   	 	    auto_test_vec("ADD",       	0, 1, 2'b11, 1, `ADD,      8'd10, 8'd20, 0);
     		//$display("[%0t]",$time);
     		auto_test_vec("SUB",       	0, 1, 2'b11, 1, `SUB,      8'd25, 8'd10, 0);
     		auto_test_vec("ADD_CIN",   	0, 1, 2'b11, 1, `ADD_CIN,  8'd5,  8'd7,  1);
@@ -261,13 +260,13 @@ module alu_top_tb;
     		auto_test_vec("ROL",       	0, 1, 2'b11, 0, `ROL,      8'h81, 8'd1,  0);
     		auto_test_vec("ROR",      	0, 1, 2'b11, 0, `ROR,      8'h03, 8'd1,  0);
     		auto_test_vec("ADD_SIGN1", 	0, 1, 2'b11, 1, `ADD_SIGN, 8'd50, -8'd10,0);
-   		auto_test_vec("SUB_SIGN1", 	0, 1, 2'b11, 1, `SUB_SIGN, 8'd70, 8'd20, 0);
+   		    auto_test_vec("SUB_SIGN1", 	0, 1, 2'b11, 1, `SUB_SIGN, 8'd70, 8'd20, 0);
     		auto_test_vec("SUB_SIGN2", 	0, 1, 2'b11, 1, `SUB_SIGN, -8'd10,8'd20, 0);
     		auto_test_vec("NAND",      	0, 1, 2'b11, 0, `NAND,     8'hAA, 8'h0F, 0);
     		auto_test_vec("NOR",       	0, 1, 2'b11, 0, `NOR,      8'hAA, 8'h0F, 0);
-   		auto_test_vec("XNOR",      	0, 1, 2'b11, 0, `XNOR,     8'hF0, 8'h0F, 0);
+   		    auto_test_vec("XNOR",      	0, 1, 2'b11, 0, `XNOR,     8'hF0, 8'h0F, 0);
     		auto_test_vec("NOT_B",     	0, 1, 2'b10, 0, `NOT_B,    0,     8'h3C, 0);
-   	 	auto_test_vec("SHR1_B",    	0, 1, 2'b10, 0, `SHR1_B,   0,     8'b10110010, 0);
+   	 	    auto_test_vec("SHR1_B",    	0, 1, 2'b10, 0, `SHR1_B,   0,     8'b10110010, 0);
     		auto_test_vec("SHL1_B",    	0, 1, 2'b10, 0, `SHL1_B,   0,     8'b01010101, 0);
     		auto_test_vec("ADD_OVF",   	0, 1, 2'b11, 1, `ADD,      8'hFF, 8'd1,  0);
     		auto_test_vec("SUB_UFLOW", 	0, 1, 2'b11, 1, `SUB,      8'd1,  8'd2,  0);
@@ -296,10 +295,12 @@ module alu_top_tb;
     		auto_test_vec("INC_MUL_MAXA",   0, 1, 2'b11, 1, `INC_MUL,  8'd119,8'd1,  0);
     		auto_test_vec("INC_MUL_MAXB",   0, 1, 2'b11, 1, `INC_MUL,  8'd1,  8'd127,0);
     		auto_test_vec("INC_MUL_BIG",    0, 1, 2'b11, 1, `INC_MUL,  8'd254,8'd254,0);
-		auto_test_vec("ERR_RST",   	1, 0, 2'b00, 0,	4'b0000,   0,     0,     0);
-		auto_test_vec("ADD_SIGN_TEST",  0, 1 ,2'b11 ,1, `ADD_SIGN, -8'd128,-8'd2,0);
+    		auto_test_vec("ADD_SIGN_TEST",  0, 1 ,2'b11 ,1, `ADD_SIGN, -8'd128,-8'd2,0);
     		auto_test_vec("SUB_SIGN_TEST",  0, 1 ,2'b11 ,1, `SUB_SIGN, -8'd128,-8'd2,0);
+    		auto_test_vec("INC_MUL_TEST",    0, 1, 2'b11, 1, `INC_MUL,  8'hFE,8'hFE,0);
     		auto_test_vec("SHL_MUL_TEST",    0, 1, 2'b11, 1, `SHL_MUL,  8'hFF,8'hFE,0);
+		    auto_test_vec("ERR_RST",   	1, 0, 2'b00, 0,	4'b0000,   0,     0,     0);
+		    
     		//auto_test_vec("RANDOM",  0, 1, 2'b11,1,`ADD,        $random, $random, 0);
 
     		$display("Total: %0d   Passed: %0d   Failed: %0d", testnum-1, pass, fail);
