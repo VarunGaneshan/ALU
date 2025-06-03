@@ -93,7 +93,7 @@
 
 This ALU is fully modular and parameterized. It supports wide data operations, structured error signaling, and clear mode separation. Its flexibility makes it ideal for integration into datapaths, processors, or hardware accelerators.
 
-## Running tests in Questa sim
+## 🔹 Running tests in Questa sim
 ```
 vlog -sv +acc +cover -l alu_coverage.log test_bench.v #Compile
 vsim -novopt -suppress 12110 -coverage alu_top_tb -c -do "add wave * coverage save -onexit -directive -codeAll alu.ucdb; run -all; exit" #Simulation with coverage
